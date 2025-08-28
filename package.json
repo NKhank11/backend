@@ -5,6 +5,7 @@
   "author": "Student360-AI-Mentoring",
   "private": true,
   "license": "MIT",
+  "main": "dist/main.js",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
