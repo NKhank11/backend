@@ -15,6 +15,7 @@ export default registerAs(
     entities: [User, Student],
     synchronize: process.env.NODE_ENV !== 'production',
     logging: process.env.NODE_ENV === 'development',
+    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
     migrations: [],
     migrationsTableName: 'migrations',
     migrationsRun: false,
