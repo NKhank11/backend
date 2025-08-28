@@ -1,6 +1,9 @@
 {
   "version": 2,
-  "env": {
-    "NODE_ENV": "development"
-  }
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/main.js"
+    }
+  ]
 }
