@@ -1,5 +1,7 @@
 import { registerAs } from '@nestjs/config';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { User } from '../users/entities/user.entity';
+import { Student } from '../students/entities/student.entity';
 
 export default registerAs(
   'database',
@@ -10,10 +12,10 @@ export default registerAs(
     username: process.env.DATABASE_USERNAME || 'student_api',
     password: process.env.DATABASE_PASSWORD || 'password',
     database: process.env.DATABASE_NAME || 'student_db',
-    entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+    entities: [User, Student],
     synchronize: process.env.NODE_ENV !== 'production',
     logging: process.env.NODE_ENV === 'development',
-    migrations: [__dirname + '/../database/migrations/*{.ts,.js}'],
+    migrations: [],
     migrationsTableName: 'migrations',
     migrationsRun: false,
   }),
